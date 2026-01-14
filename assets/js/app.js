@@ -47,19 +47,21 @@ function renderFood(list) {
   foodList.innerHTML = "";
   list.forEach((item) => {
     foodList.innerHTML += `
-      <div class="bg-white p-3 rounded-lg shadow">
-        <img 
+      <div class="bg-white p-3 rounded-2xl shadow-md">
+
+        <img
           src="assets/img/food/${item.image}"
           alt="${item.name}"
-          class="w-full h-28 object-cover rounded">
+          class="w-full aspect-square object-cover rounded-xl">
 
-        <h3 class="font-bold mt-2 text-sm">${item.name}</h3>
-        <p class="text-xs text-gray-600">${item.price}k</p>
+        <h3 class="font-bold mt-3 text-sm line-clamp-2">${item.name}</h3>
+
+        <p class="text-xs text-gray-600 mb-2">${item.price}k</p>
 
         <button
-          class="mt-2 bg-orange-500 text-white w-full p-2 rounded text-sm"
+          class="mt-1 bg-orange-500 text-white w-full py-2 rounded-xl text-sm active:scale-95"
           onclick="addCart(this,'${item.name}',${item.price})">
-          + Keranjang
+          + Tambah ke Keranjang
         </button>
       </div>
     `;
@@ -67,22 +69,23 @@ function renderFood(list) {
 }
 
 // ================= RENDER DRINK (TANPA FOTO) =================
-
 function renderDrink(list) {
   drinkList.innerHTML = "";
   list.forEach((item) => {
     drinkList.innerHTML += `
-      <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+      <div class="bg-white p-3 rounded-lg shadow flex flex-col h-full">
+        
         <div>
-          <h3 class="font-bold text-sm">${item.name}</h3>
+          <h3 class="font-bold text-sm line-clamp-2">${item.name}</h3>
           <p class="text-xs text-gray-600">${item.price}k</p>
         </div>
 
         <button
-          class="bg-orange-500 text-white px-3 py-1 rounded text-sm"
+          class="mt-auto bg-orange-500 text-white w-full p-2 rounded text-sm"
           onclick="addCart(this,'${item.name}',${item.price})">
           + Keranjang
         </button>
+
       </div>
     `;
   });

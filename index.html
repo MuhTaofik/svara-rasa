@@ -2,11 +2,15 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <title>Svara Rasa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="bg-gray-100">
+  <body class="max-w-full overflow-x-hidden bg-gray-100">
     <header class="bg-orange-500 text-white p-4 flex justify-between">
       <h1 class="font-bold">SVARA RASA</h1>
       <a href="cart.html" class="relative">
@@ -28,22 +32,28 @@
     </div>
 
     <h2 class="px-4 font-bold">FOOD</h2>
-    <div id="food-list" class="grid grid-cols-2 gap-3 p-4"></div>
-
+    <div
+      id="food-list"
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
+    ></div>
     <h2 class="px-4 font-bold">DRINK</h2>
-    <div id="drink-list" class="grid grid-cols-2 gap-3 p-4"></div>
+    <div
+      id="drink-list"
+      class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4"
+    ></div>
+
     <h2 class="px-4 font-bold mt-6">Lokasi Kami</h2>
 
     <div class="p-4">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.0361614781293!2d120.26935356141703!3d-4.397568613554959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbdf9edb8a61f8d%3A0xe8cf516ec55ea780!2sToko%20dilla%20kasmia!5e0!3m2!1sen!2sid!4v1768377017857!5m2!1sen!2sid"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <div class="w-full aspect-video">
+        <iframe
+          class="w-full h-full rounded-xl"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.0361614781293!2d120.26935356141703!3d-4.397568613554959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbdf9edb8a61f8d%3A0xe8cf516ec55ea780!2sToko%20dilla%20kasmia!5e0!3m2!1sen!2sid!4v1768377017857!5m2!1sen!2sid"
+          style="border: 0"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
 
     <script src="assets/js/app.js"></script>
