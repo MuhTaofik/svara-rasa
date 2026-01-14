@@ -1,3 +1,7 @@
+body {
+  font-size: 16px;
+}
+
 @keyframes pop {
   0% {
     transform: scale(1);

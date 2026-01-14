@@ -1,70 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <!-- Kunci tampilan & cegah zoom -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
     <title>Checkout</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100 p-4">
-    <h1 class="font-bold text-xl mb-4">Checkout Pesanan</h1>
 
-    <div id="cart-list"></div>
+  <!-- tambahkan text-base agar default besar -->
+  <body class="bg-gray-100 p-4 text-base">
+    <!-- JUDUL -->
+    <h1 class="font-bold text-2xl mb-5 text-center">Checkout Pesanan</h1>
 
-    <!-- Data Pembeli -->
-    <label class="font-bold mt-4 block">Nama Pembeli</label>
-    <input
-      id="buyer-name"
-      class="w-full p-2 border rounded mt-1"
-      placeholder="Masukkan nama"
-    />
+    <!-- LIST KERANJANG -->
+    <div id="cart-list" class="space-y-3 text-base"></div>
 
-    <label class="font-bold mt-3 block">Alamat Rumah</label>
-    <textarea
-      id="buyer-address"
-      class="w-full p-2 border rounded mt-1"
-      placeholder="Masukkan alamat lengkap"
-    ></textarea>
+    <!-- FORM PEMBELI -->
+    <div class="bg-white p-4 rounded shadow mt-4 space-y-3">
+      <label class="font-semibold">Nama Pembeli</label>
+      <input
+        id="buyer-name"
+        class="w-full p-3 border rounded text-base"
+        placeholder="Masukkan nama lengkap"
+      />
 
-    <!-- Metode Pembayaran -->
-    <label class="font-bold mt-4 block">Metode Pembayaran</label>
-    <select id="payment" class="w-full p-2 border rounded mt-1">
-      <option value="Cash">Cash (Bayar di Tempat)</option>
-      <option value="Transfer">Transfer Bank</option>
-      <option value="QRIS">QRIS</option>
-    </select>
+      <label class="font-semibold">Alamat Rumah</label>
+      <textarea
+        id="buyer-address"
+        class="w-full p-3 border rounded text-base"
+        rows="3"
+        placeholder="Masukkan alamat lengkap"
+      ></textarea>
 
-    <!-- Info Transfer -->
-    <div id="transfer-box" class="hidden bg-white p-3 rounded mt-3">
-      <p class="font-bold">Transfer ke:</p>
+      <!-- PEMBAYARAN -->
+      <label class="font-semibold">Metode Pembayaran</label>
+      <select id="payment" class="w-full p-3 border rounded text-base">
+        <option value="Cash">Cash (Bayar di Tempat)</option>
+        <option value="Transfer">Transfer Bank</option>
+        <option value="QRIS">QRIS</option>
+      </select>
+    </div>
+
+    <!-- INFO TRANSFER -->
+    <div
+      id="transfer-box"
+      class="hidden bg-white p-4 rounded shadow mt-4 text-base"
+    >
+      <p class="font-bold text-lg mb-1">Transfer ke:</p>
       <p>Bank BRI</p>
-      <p>No Rek: 5103 0105 3930 530</p>
-      <p>Nama: NURFADILLAH</p>
+      <p>No Rek: <span class="font-semibold">5103 0105 3930 530</span></p>
+      <p>Nama: <span class="font-semibold">NURFADILLAH</span></p>
     </div>
 
-    <!-- Info QRIS -->
-    <div id="qris-box" class="hidden bg-white p-3 rounded mt-3 text-center">
-      <p class="font-bold mb-2">Scan QRIS:</p>
-      <p>saat ini belum tersedia</p>
-      <img src="assets/img/qris.png" class="mx-auto w-48" />
+    <!-- INFO QRIS -->
+    <div
+      id="qris-box"
+      class="hidden bg-white p-4 rounded shadow mt-4 text-center text-base"
+    >
+      <p class="font-bold text-lg mb-2">Scan QRIS</p>
+      <p class="mb-2">Saat ini belum tersedia</p>
+      <img src="assets/img/qris.png" class="mx-auto w-56 rounded" />
     </div>
 
+    <!-- TOMBOL CHECKOUT -->
     <button
       onclick="processCheckout()"
-      class="mt-4 bg-green-500 text-white w-full p-2 rounded"
+      class="mt-5 bg-green-600 text-white w-full p-3 rounded text-lg font-bold shadow"
     >
       Lanjut Checkout
     </button>
 
-    <!-- Tombol kirim bukti -->
+    <!-- TOMBOL KIRIM BUKTI -->
     <div id="send-proof" class="hidden mt-4">
       <button
         onclick="sendProof()"
-        class="bg-orange-500 text-white w-full p-2 rounded"
+        class="bg-orange-500 text-white w-full p-3 rounded text-lg font-bold shadow"
       >
         Kirim Bukti Pembayaran via WhatsApp
       </button>
     </div>
 
+    <!-- SCRIPT -->
     <script src="assets/js/cart.js"></script>
   </body>
 </html>
